@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request
-# # from pybaseball import playerid_lookup, statcast_pitcher
 from pybaseball import  playerid_lookup
 from pybaseball import  statcast_pitcher
 import matplotlib
@@ -118,7 +117,7 @@ def generate_chart(pitch_data):
 
     # ax.bar(range(len(pitch_data)), pitch_data, tick_label=list(pitch_data.keys()))
     io_buf = io.BytesIO()
-    plt.savefig(io_buf, format='png')
+    plt.savefig(io_buf, format='png', bbox_inches='tight')
     io_buf.seek(0)
     return base64.b64encode(io_buf.read()).decode()
 
