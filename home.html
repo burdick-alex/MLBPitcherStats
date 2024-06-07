@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pitcher Stats</title>
+</head>
+<body>
+    <h1>Pitcher Stats</h1>
+    <form method="POST">
+        <input type="text" name="name" placeholder="Enter a pitcher's name">
+        <input type="submit" value="Get Stats">
+    </form>
+    {% if chart %}
+    <h2 style="padding-left: 20px;">{{ player_name.title() }}</h2>
+    <img src="data:image/png;base64,{{ chart }}" style="max-width: 100%;">
+    {% endif %}
+</body>
+</html>
