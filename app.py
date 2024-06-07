@@ -123,4 +123,4 @@ def generate_chart(pitch_data):
     return base64.b64encode(io_buf.read()).decode()
 
 if __name__ == '__main__':
-    app.run(debug=True, template_folder='templates')
+    app.run(debug=True,host='0.0.0.0', port=10000, template_folder='templates')
